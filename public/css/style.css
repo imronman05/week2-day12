@@ -1,0 +1,57 @@
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+nav {
+    /* border: 1px solid red; */
+    height: 9vh;
+}
+.headerHero{
+    width: 100vw;
+    height: 91vh !important;
+}
+.bg-semiWhite{
+    background-color: rgb(224,228,232);
+}
+.text-justify{
+    text-align: justify;
+}
+.icon a {
+    padding: .18em .3em;
+    color: white !important;
+    background-color: black !important;
+    text-decoration: none !important; /*untuk menghilangkan baris yang secara default ada pada tag a*/
+    border-radius: 50%;
+    margin-right: 3%;
+}
+.fa-facebook-f{
+    padding: 0 .1em;
+}
+.card-image{
+    width: 100%;
+    height: 15em;
+    background-image: url(../gambar/peter.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: inherit;
+    background-position: center;
+}
+.container-form{
+    height: 91vh !important;
+}
+.resize-none {
+    resize: none;
+}
+.card-image-detail-blog{
+    width: 65% !important;
+    height: 100%;
+}
+.card-desc{
+    width: 35% !important;
+}

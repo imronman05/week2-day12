@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Home</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container p-0">
+          <img src="../public/gambar/brandred.png" class="navbar-brand" alt="Logo Dumbways" width="4.3%">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-2 me-auto mb-2 mb-lg-0">
+              <li class="nav-item ms-1">
+                <a class="nav-link active fw-semibold" aria-current="page" href="#">Home</a>
+              </li>
+              {{if .DataSession.Login}}
+              <li class="nav-item ms-2">
+                <a class="nav-link" href="/form-project">Add Project</a>
+              </li>
+              </ul>
+              <div>
+              <a href="#" class="text-decoration-none text-dark me-1 fs-6 p-5"><i class="fa-solid fa-user"></i> {{.DataSession.UserName}}</a>
+              <a href="/contact" class="btn btn-dark text-white px-3 py-1 fw-semibold me-2">Contact Me</a>
+              <a href="/logout" class="btn btn-dark text-white px-3 py-1 fw-semibold">Logut</a>
+              {{else}}
+              </ul>
+            <div>
+                <a href="/register" class="text-decoration-none text-secondary me-4">Register</a>
+                <a href="/login" class="text-decoration-none text-secondary me-4 ">Login</a>
+                <a href="/contact" class="btn btn-dark text-white px-3 py-1 fw-semibold">Contact Me</a>
+              {{end}}
+                <!-- <a href="/contact" class="btn btn-dark text-white px-3 py-1 fw-semibold">Contact Me</a> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+  </header>
+<main>
+  {{if .DataSession.FlashData}}
+  <div class="container p-0 position-relative">
+    <div class="alert alert-primary alert-dismissible fade show text-dark" role="alert">
+      {{.DataSession.FlashData}}  <strong>Hello, {{.DataSession.UserName}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+  {{end}}
+  <div class="headerHero bg-semiWhite d-flex align-items-center">
+    <div class="container">
+      <div class="card row d-flex flex-row p-4 gap-5 border-0 shadow-lg">
+        <div class="card-body col-1 ps-4">
+          <h1 class="card-title fw-bold fs-3 mb-3 mt-4">Hi Welcome to my hut</h1>
+          <p class="card-text lh-base text-justify mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, excepturi corporis eaque deserunt nostrum perferendis maiores! Voluptatibus, alias corporis! Ab, aliquam deleniti pariatur quam voluptatibus hic cum dolorem doloribus odio enim fuga sit, non quia blanditiis dolores unde quo ipsa voluptate necessitatibus asperiores reprehenderit eligendi iste aut. Molestiae, nostrum voluptates fugiat repellendus hic aliquid laudantium maxime pariatur modi quia labore harum neque, totam dicta officia architecto maiores! Quo, explicabo porro?</p>
+          <!-- <div class=""> -->
+            <a href="#" class="btn btn-dark text-white px-4 py-1 fw-semibold rounded-pill">Contact</a>
+            <a href="#" class="text-decoration-none text-dark ms-3 fw-semibold">Download CV <i class="bi bi-download ms-2"></i></a>
+          <!-- </div> -->
+          <div class="icon mt-5 fs-3">
+            <a href="https://www.linkedin.com/in/imron-rosadi-495204222/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/imronman05/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://id-id.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-5 p-3 pe-4 pb-0 pt-0">
+          <div class="col-12 p-0 rounded shadow-lg pb-1">
+            <img src="../public/gambar/imron.png" class="card-img-bottom rounded-0 rounded-top" alt="Gambar tony strak" width="100%">
+            <h1 class="text-center mt-2 mb-0">Imron Rosadi</h1>
+            <p class="text-center">Fullsctack Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<article>
+  <div class="container py-5">
+    <h1 class="text-center mb-5 fw-bold">MY PROJECT</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+
+      {{range $index, $data := .Blogs}}
+      <div class="col">
+        <div class="card pt-2 pb-3 px-3 shadow-lg border-0">
+            <a class="text-dark text-decoration-none" href="/detail-project/{{$data.Id}}">
+              <img src="/uploads/{{ $data.Image }}" class="card-img-top rounded-4 p-2" alt="...">
+            </a>
+          <div class="card-body p-0">
+            <h5 class="card-title mt-3 mb-0">{{$data.NameProject}}
+            </h5>
+            <span class="text-secondary">durasi: {{$data.Duration}}</span>
+            <p class="card-text mt-3">{{$data.Message}}</p>
+            <div class="fs-2 mt-3">
+              {{range $index, $item := $data.Tech}}
+                {{if eq $item "Javascript" }}
+                  <i class="fa-brands fa-square-js me-2"></i>
+                {{else if eq $item "Css"}}
+                  <i class="fa-brands fa-css3-alt me-2"></i>
+                {{else if eq $item "ReactJs"}}
+                  <i class="fa-brands fa-react me-0"></i>
+                {{else if eq $item "golang"}}
+                  <i class="fa-brands fa-golang"></i>
+                {{end}}
+              {{end}}
+            </div>
+            <div class="d-flex flex-wrap mt-3">
+              <a href="/edit-project/{{$data.Id}}" class="btn btn-dark text-white px-4 me-1 py-0 fw-semibold flex-grow-1">edit</a>
+              <a href="/delete-project/{{$data.Id}}" class="btn btn-dark text-white px-3 py-0 fw-semibold flex-grow-1">delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{end}}
+    </div>  
+  </div>
+</article>
+</main>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

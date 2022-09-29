@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ADD PROJECT</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container p-0">
+              <img src="../public/gambar/brandred.png" class="navbar-brand" alt="Logo Dumbways" width="4.3%">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-2 me-auto mb-2 mb-lg-0">
+                  <li class="nav-item ms-1">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item ms-2">
+                    <a class="nav-link active fw-semibold" href="#">Add Project</a>
+                  </li>
+                </ul>
+                <div>
+                <a href="#" class="text-decoration-none text-dark me-1 fs-6 p-5"><i class="fa-solid fa-user"></i> {{.DataSession.UserName}}</a>
+                <a href="/contact" class="btn btn-dark text-white px-3 py-1 fw-semibold me-2">Contact Me</a>
+                <a href="/logout" class="btn btn-dark text-white px-3 py-1 fw-semibold">Logut</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+      </header>
+<main>
+    <div class="p-0 container-form bg-semiWhite d-flex justify-content-center align-items-center">
+            <form action="/add-project" class="container p-0" style="width: 30%;" method="post" enctype="multipart/form-data">
+                <h3 class="text-center">ADD MY PROJECT</h3>
+                <div class="mb-3">
+                  <label for="projectName" class="form-label m-0 fw-semibold">Project Name
+                </label>
+                  <input type="text" class="form-control shadow" id="projectName" name="projectName" aria-describedby="emailHelp">
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="startDate" class="form-label m-0 fw-semibold">Start Date</label>
+                        <input type="date" class="form-control shadow" id="startDate" name="startDate">
+                    </div>
+                    <div class="col">
+                        <label for="endDate" class="form-label m-0 fw-semibold">End Date</label>
+                        <input type="date" class="form-control" id="endDate" name="endDate">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="Description" class="form-label m-0 fw-semibold">Description</label>
+                    <textarea class="form-control resize-none shadow" id="Description" cols="30" rows="5" name="Description"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="fw-semibold p-0 mb-2">Technologies</label>
+                    <div class="d-flex flex-row" >
+                        <div class="">
+                            <div class="mb-2">
+                                <input type="checkbox" id="ReactJs" value="ReactJs" class="checkbox" name="technologies">
+                                <label for="ReactJs" class="fw-bold ms-2 opacity-50">React JS</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Css" value="Css" class="checkbox" name="technologies">
+                                <label for="Css" class="fw-bold ms-2 opacity-50">Css</label>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="mb-2">
+                                <input type="checkbox" id="Javascript" value="Javascript" class="checkbox ms-5" name="technologies">
+                                <label for="Javascript" class="fw-bold ms-2 opacity-50">JavaScript</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="golang" value="golang" class="checkbox ms-5" name="technologies">
+                                <label for="golang" class="fw-bold ms-2 opacity-50">Golang</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label for="image" class="form-label mb-0 fw-bold">Upload Image</label>
+                        <div class="position-relative">
+                            <input class="form-control shadow" type="file" id="image" name="image" accept="image/*">
+                            <i class="fa-solid fa-paperclip d-flex align-items-center position-absolute top-0" style="height: 100%; right: 2% !important;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-dark text-white px-4 py-0 fw-semibold rounded-pill">Submit</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</main>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

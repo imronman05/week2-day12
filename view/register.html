@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Register</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container p-0">
+              <img src="../public/gambar/brandred.png" class="navbar-brand" alt="Logo Dumbways" width="4.3%">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-2 me-auto mb-2 mb-lg-0">
+                  <li class="nav-item ms-1">
+                    <a class="nav-link " aria-current="page" href="/">Home</a>
+                  </li>
+                </ul>
+                <div>
+                    <a href="#" class="text-decoration-none text-dark me-4 active fw-bold">Register</a>
+                    <a href="/login" class="text-decoration-none text-secondary me-4">Login</a>
+                    <a href="/contact" class="btn btn-dark text-white px-3 py-1 fw-semibold">Contact Me</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+      </header>
+    <main>
+        <main>
+            <div class="p-0 container-form bg-semiWhite d-flex justify-content-center align-items-center">
+                    <form action="/form-register" class="container p-0" style="width: 30%;" method="post">
+                        <h3 class="text-center mb-5">REGISTER YOUR ACCOUNT</h3>
+                        <div class="mb-3">
+                          <label for="name" class="form-label m-0 fw-semibold">Nama
+                        </label>
+                          <input type="name" class="form-control shadow" id="name" name="name" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label m-0 fw-semibold">Email
+                          </label>
+                            <input type="email" class="form-control shadow" id="email" name="email" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label m-0 fw-semibold">Password
+                          </label>
+                            <input type="password" class="form-control shadow" id="password" name="password" aria-describedby="emailHelp">
+                        </div>
+                        <div class="d-flex justify-content-end mt-5">
+                            <button type="submit" class="btn btn-dark text-white px-4 py-0 fw-semibold rounded-pill">Submit</button>
+                        </div>
+                    </form>
+            </div>
+        </main>
+    </main>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
